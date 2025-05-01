@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Effra';
+    font-display: swap;
+    src:
+        local('Effra-Bold'),
+        url('/src/fonts/Effra-Bold.woff2') format('woff2'),
+        url('/src/fonts/Effra-Bold.woff') format('woff'),
+        url('/src/fonts/Effra-Bold.ttf') format('truetype'),
+        url("/src/fonts/") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Effra';
+    font-display: swap;
+    src:
+            local('Effra'),
+            url('/src/fonts/Effra.woff2') format('woff2'),
+            url('/src/fonts/Effra.woff') format('woff'),
+            url('/src/fonts/Effra.ttf') format('truetype'),
+            url("/src/fonts/") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Effra';
+    font-display: swap;
+    src:
+            local('Effra-Medium'),
+            url('/src/fonts/Effra-Medium.woff2') format('woff2'),
+            url('/src/fonts/Effra-Medium.woff') format('woff'),
+            url('/src/fonts/Effra-Medium.ttf') format('truetype'),
+            url("/src/fonts/") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-display: swap;
+  src:
+          local('OpenSans-Bold'),
+          url('/src/fonts/OpenSans-Bold.woff2') format('woff2'),
+          url('/src/fonts/OpenSans-Bold.woff') format('woff'),
+          url('/src/fonts/OpenSans-Bold.ttf') format('truetype'),
+          url("/src/fonts/") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-display: swap;
+  src:
+          local('OpenSans-SemiBold'),
+          url('/src/fonts/OpenSans-SemiBold.woff2') format('woff2'),
+          url('/src/fonts/OpenSans-SemiBold.woff') format('woff'),
+          url('/src/fonts/OpenSans-SemiBold.ttf') format('truetype'),
+          url("/src/fonts/") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-display: swap;
+  src:
+          local('OpenSans-Regular'),
+          url('/src/fonts/OpenSans-Regular.woff2') format('woff2'),
+          url('/src/fonts/OpenSans-Regular.woff') format('woff'),
+          url('/src/fonts/OpenSans-Regular.ttf') format('truetype'),
+          url("/src/fonts/") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,17 @@
+@use 'libs/reset';
+@use 'libs/modern-normalize.min.css';
+@use 'libs/constClass';
+@use 'libs/variables';
+@use 'libs/fonts';
+
+@use "../../node_modules/swiper/swiper-bundle.min";
+
+@use 'blocks/menu';
+@use 'blocks/vitamins';
+@use 'blocks/healthy';
+@use 'blocks/tellus';
+@use 'blocks/customer';
+@use 'blocks/ready';
+@use 'blocks/footer';
+
+@use 'base/anim';

@@ -1,0 +1,145 @@
+@use "../libs/variables" as *;
+
+.vitamins {
+    position: relative;
+
+    &__bckg {
+        position: absolute;
+        width: 50%;
+        right: 0;
+        top: 0;
+        background-color: #F9F9F9;
+        z-index: -1;
+        height: 100%;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 960px;
+    }
+
+    &__left, &__right {
+        width: 50%;
+    }
+
+    &__left {
+        padding-top: 260px;
+        padding-left: 202px;
+    }
+
+    &__right {
+        background-color: #F9F9F9;
+        position: relative;
+        padding-top: 129px;
+
+        picture {
+            position: relative;
+            z-index: 2;
+            display: block;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 51%;
+        left: 39.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__header {
+        font-weight: 500;
+        font-size: 56px;
+        color: $text-color-dark;
+        width: 660px;
+        line-height: 121%;
+
+        span {
+            color: $text-color-orange;
+        }
+    }
+
+    &__content {
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 163%;
+        color: $text-color-semidark;
+        width: 488px;
+        margin-top: 36px;
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 51px;
+        align-items: center;
+    }
+
+    &__goto {
+        font-weight: 500;
+        font-size: 20px;
+        color: #f27e58;
+        text-decoration: none;
+        margin-left: 33px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-left: 8px;
+        }
+
+        &:hover {
+            color: #f27e58;
+        }
+    }
+
+    &__round {
+        width: 523px;
+        height: 523px;
+        border-radius: 100%;
+        background-color: $main-violet;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+
+    &__animations {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__animation1 {
+        position: absolute;
+        left: 30.6%;
+        top: 0;
+        animation: rotate 5s linear infinite;
+        transform-origin: top left;
+    }
+
+    &__animation2 {
+        position: absolute;
+        right: 4.1%;
+        top: 17.8%;
+        animation: scale 5s linear infinite;
+        transform-origin: center center;
+    }
+
+    &__animation3 {
+        position: absolute;
+        left: 42.3%;
+        bottom: 3.3%;
+        animation: rotate 5s linear infinite;
+        transform-origin: top center;
+    }
+
+}
