@@ -201,3 +201,104 @@ document.addEventListener("DOMContentLoaded", function () {
     changeSvgHealthy(readySvgElementAnim2, readySvgAnim2, readySvgAnim2Origin);
     changeSvgHealthy(readySvgElementAnim1, readySvgAnim1, readySvgAnim1Origin);
 });
+
+// const orders = [
+//     { id: 1, client: "Anna", total: 120 },
+//     { id: 2, client: "Boris", total: 90 },
+//     { id: 3, client: "Anna", total: 30 },
+//     { id: 4, client: "Clara", total: 45 },
+//     { id: 5, client: "Boris", total: 60 },
+// ];
+//
+// let user = orders.reduce((acc, order) => {
+//     let { client, total } = order;
+//     if (!acc[client]) {
+//         acc[client] = {
+//             count: 0,
+//             total: 0,
+//         };
+//     }
+//     acc[client].count++;
+//     acc[client].total += total;
+//     return acc;
+// }, {});
+//
+// console.log(user);
+
+// const users = [
+//     { id: 1, name: "Alice", role: "admin" },
+//     { id: 2, name: "Bob", role: "user" },
+//     { id: 3, name: "Charlie", role: "user" },
+//     { id: 4, name: "David", role: "moderator" },
+//     { id: 5, name: "Eve", role: "admin" },
+// ];
+//
+// const roleCount = users.reduce((acc, user) => {
+//     acc[user.role] = (acc[user.role] || 0) + 1;
+//     return acc;
+// }, {});
+//
+// console.log(roleCount);
+//
+// const products = [
+//     { name: "Laptop", price: 1000 },
+//     { name: "Phone", price: 500 },
+//     { name: "Tablet", price: 750 },
+// ];
+//
+// const upperPrice = products.map(product => {
+//     return product.price + product.price * 0.2;
+// });
+//
+// products.forEach((product, i) => {
+//     console.log(`Продукт ${product.name}, Цена с НДС: ${upperPrice[i]}`);
+// });
+
+const transactions = [
+    { type: "income", amount: 1000, currency: "USD", date: "2024-03-12" },
+    { type: "expense", amount: 200, currency: "USD", date: "2024-05-01" },
+    { type: "income", amount: 700, currency: "EUR", date: "2025-01-10" },
+    { type: "expense", amount: 100, currency: "EUR", date: "2025-02-14" },
+    { type: "income", amount: 1200, currency: "USD", date: "2025-03-01" },
+    { type: "expense", amount: 400, currency: "USD", date: "2025-03-03" },
+];
+
+const result = transactions.reduce((acc, transaction) => {
+    const year = new Date(transaction.date).getFullYear();
+
+    if (!acc[year]) {
+        acc[year] = {};
+    }
+
+    if (!acc[year][transaction.currency]) {
+        acc[year][transaction.currency] = { income: 0, expense: 0 };
+    }
+
+    acc[year][transaction.currency][transaction.type] += transaction.amount;
+
+    return acc;
+}, {});
+
+console.log(result);
+
+const sentences = [
+    "JavaScript is awesome",
+    "Vue is reactive",
+    "Reduce is powerful method",
+    "Code every day",
+];
+
+let wordCounter = sentences.reduce((acc, sentence) => {
+    const words = sentence.split(" ");
+    const wordLowerCase = words.map(word => word.toLowerCase());
+
+    wordLowerCase.forEach(word => {
+        if (!acc[word]) {
+            acc[word] = 0;
+        }
+        acc[word] = acc[word] + 1;
+    });
+    return acc;
+}, {});
+
+console.log(wordCounter);
