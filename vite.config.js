@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import handlebars from "vite-plugin-handlebars";
 import pages from "./pages.config.js";
 import path from "path";
-import { terser } from "rollup-plugin-terser";
 import fullReload from "vite-plugin-full-reload";
 import imagemin from "vite-plugin-imagemin";
 import { convertImages } from "./convertImages";

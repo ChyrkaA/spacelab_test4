@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 2,
             loop: true,
             spaceBetween: 33,
+            breakpoints: {
+                320:{
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768:{
+                    slidesPerView: 2,
+                    spaceBetween: 33,
+                }
+            }
         });
     }
 
@@ -27,6 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 2,
             loop: false,
             spaceBetween: 33,
+            breakpoints: {
+                320:{
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768:{
+                    slidesPerView: 2,
+                    spaceBetween: 33,
+                }
+            }
         });
     }
 
@@ -254,51 +274,51 @@ document.addEventListener("DOMContentLoaded", function () {
 //     console.log(`Продукт ${product.name}, Цена с НДС: ${upperPrice[i]}`);
 // });
 
-const transactions = [
-    { type: "income", amount: 1000, currency: "USD", date: "2024-03-12" },
-    { type: "expense", amount: 200, currency: "USD", date: "2024-05-01" },
-    { type: "income", amount: 700, currency: "EUR", date: "2025-01-10" },
-    { type: "expense", amount: 100, currency: "EUR", date: "2025-02-14" },
-    { type: "income", amount: 1200, currency: "USD", date: "2025-03-01" },
-    { type: "expense", amount: 400, currency: "USD", date: "2025-03-03" },
-];
-
-const result = transactions.reduce((acc, transaction) => {
-    const year = new Date(transaction.date).getFullYear();
-
-    if (!acc[year]) {
-        acc[year] = {};
-    }
-
-    if (!acc[year][transaction.currency]) {
-        acc[year][transaction.currency] = { income: 0, expense: 0 };
-    }
-
-    acc[year][transaction.currency][transaction.type] += transaction.amount;
-
-    return acc;
-}, {});
-
-console.log(result);
-
-const sentences = [
-    "JavaScript is awesome",
-    "Vue is reactive",
-    "Reduce is powerful method",
-    "Code every day",
-];
-
-let wordCounter = sentences.reduce((acc, sentence) => {
-    const words = sentence.split(" ");
-    const wordLowerCase = words.map(word => word.toLowerCase());
-
-    wordLowerCase.forEach(word => {
-        if (!acc[word]) {
-            acc[word] = 0;
-        }
-        acc[word] = acc[word] + 1;
-    });
-    return acc;
-}, {});
-
-console.log(wordCounter);
+// const transactions = [
+//     { type: "income", amount: 1000, currency: "USD", date: "2024-03-12" },
+//     { type: "expense", amount: 200, currency: "USD", date: "2024-05-01" },
+//     { type: "income", amount: 700, currency: "EUR", date: "2025-01-10" },
+//     { type: "expense", amount: 100, currency: "EUR", date: "2025-02-14" },
+//     { type: "income", amount: 1200, currency: "USD", date: "2025-03-01" },
+//     { type: "expense", amount: 400, currency: "USD", date: "2025-03-03" },
+// ];
+//
+// const result = transactions.reduce((acc, transaction) => {
+//     const year = new Date(transaction.date).getFullYear();
+//
+//     if (!acc[year]) {
+//         acc[year] = {};
+//     }
+//
+//     if (!acc[year][transaction.currency]) {
+//         acc[year][transaction.currency] = { income: 0, expense: 0 };
+//     }
+//
+//     acc[year][transaction.currency][transaction.type] += transaction.amount;
+//
+//     return acc;
+// }, {});
+//
+// console.log(result);
+//
+// const sentences = [
+//     "JavaScript is awesome",
+//     "Vue is reactive",
+//     "Reduce is powerful method",
+//     "Code every day",
+// ];
+//
+// let wordCounter = sentences.reduce((acc, sentence) => {
+//     const words = sentence.split(" ");
+//     const wordLowerCase = words.map(word => word.toLowerCase());
+//
+//     wordLowerCase.forEach(word => {
+//         if (!acc[word]) {
+//             acc[word] = 0;
+//         }
+//         acc[word] = acc[word] + 1;
+//     });
+//     return acc;
+// }, {});
+//
+// console.log(wordCounter);
