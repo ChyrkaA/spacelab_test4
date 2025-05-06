@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
             loop: true,
             spaceBetween: 33,
             breakpoints: {
-                320:{
+                320: {
                     slidesPerView: 1,
                     spaceBetween: 10,
                 },
-                768:{
+                768: {
                     slidesPerView: 2,
                     spaceBetween: 33,
-                }
-            }
+                },
+            },
         });
     }
 
@@ -38,15 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
             loop: false,
             spaceBetween: 33,
             breakpoints: {
-                320:{
+                320: {
                     slidesPerView: 1,
                     spaceBetween: 10,
                 },
-                768:{
+                768: {
                     slidesPerView: 2,
                     spaceBetween: 33,
-                }
-            }
+                },
+            },
         });
     }
 
@@ -183,7 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
             changeSvgVitamins(".vitamins__animation3", vitaminSvgAnim3Origin);
             changeSvgVitamins(".vitamins__animation1", vitaminSvgAnim1Origin);
         }
-        changeSvgHealthy();
     });
 
     changeSvgVitamins(".vitamins__animation3", vitaminSvgAnim3);
@@ -220,6 +219,15 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     changeSvgHealthy(readySvgElementAnim2, readySvgAnim2, readySvgAnim2Origin);
     changeSvgHealthy(readySvgElementAnim1, readySvgAnim1, readySvgAnim1Origin);
+
+    const menu = document.querySelector(".menu");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            menu.classList.add("menu__scroll");
+        } else {
+            menu.classList.remove("menu__scroll");
+        }
+    });
 });
 
 // const orders = [

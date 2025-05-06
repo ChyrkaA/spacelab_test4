@@ -8,7 +8,7 @@
         width: 50%;
         right: 0;
         top: 0;
-        background-color: #F9F9F9;
+        background-color: #f9f9f9;
         z-index: -1;
         height: 100%;
     }
@@ -20,7 +20,8 @@
         height: 960px;
     }
 
-    &__left, &__right {
+    &__left,
+    &__right {
         width: 50%;
     }
 
@@ -30,7 +31,7 @@
     }
 
     &__right {
-        background-color: #F9F9F9;
+        background-color: #f9f9f9;
         position: relative;
         padding-top: 129px;
 
@@ -64,7 +65,7 @@
     }
 
     &__content {
-        font-family: 'Open Sans';
+        font-family: "Open Sans";
         font-weight: 400;
         font-size: 20px;
         line-height: 163%;
@@ -142,5 +143,4 @@
         animation: rotate 5s linear infinite;
         transform-origin: top center;
     }
-
 }

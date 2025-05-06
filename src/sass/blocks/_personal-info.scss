@@ -1,0 +1,50 @@
+@use "../libs/variables" as *;
+
+.personal {
+    position: relative;
+    padding-top: 180px;
+    &__title {
+        font-weight: 500;
+        font-size: 50px;
+        color: $text-color-dark;
+        width: 682px;
+    }
+    &__subtitle {
+        font-weight: 500;
+        font-size: 26px;
+        color: $text-color-dark;
+        margin-top: 60px;
+    }
+    &__text {
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 156%;
+        color: $text-color-dark;
+        width: 915px;
+    }
+    &__animations {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__animation {
+        &-1 {
+            position: absolute;
+            top: 36px;
+            left: 50%;
+            animation: rotate 5s linear infinite;
+            transform-origin: bottom left;
+            z-index: 12;
+        }
+        &-2 {
+            position: absolute;
+            top: 263px;
+            right: 0;
+            animation: rotate 5s linear infinite;
+            transform-origin: calc(50% + 35px) top;
+        }
+    }
+}
