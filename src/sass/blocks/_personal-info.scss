@@ -2,7 +2,8 @@
 
 .personal {
     position: relative;
-    padding-top: 180px;
+    padding-top: 183px;
+    overflow-x: hidden;
     &__title {
         font-weight: 500;
         font-size: 50px;
@@ -13,7 +14,7 @@
         font-weight: 500;
         font-size: 26px;
         color: $text-color-dark;
-        margin-top: 60px;
+        margin-top: 65px;
     }
     &__text {
         font-family: "Open Sans";
@@ -22,8 +23,11 @@
         line-height: 156%;
         color: $text-color-dark;
         width: 915px;
+        margin-top: 23px;
+        letter-spacing: 0.002em;
     }
     &__animations {
+        pointer-events: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -34,7 +38,7 @@
         &-1 {
             position: absolute;
             top: 36px;
-            left: 50%;
+            left: 55%;
             animation: rotate 5s linear infinite;
             transform-origin: bottom left;
             z-index: 12;

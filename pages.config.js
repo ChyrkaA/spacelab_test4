@@ -9,6 +9,11 @@ const pages = [
         name: "personal",
         path: resolve(__dirname, "personal.html"),
     },
+
+    {
+        name: "quiz",
+        path: resolve(__dirname, "quiz.html"),
+    },
 ];
 
 export default pages;

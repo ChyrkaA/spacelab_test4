@@ -3,10 +3,16 @@
 .p-pack {
     position: relative;
     margin-top: 85px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
     &__wrapper {
         background-color: #faf8f6;
         border-radius: 16px;
         padding: 60px;
+        padding-top: 63px;
+        padding-bottom: 48px;
+        width: 84.2%;
     }
 
     &__title {
@@ -21,6 +27,8 @@
     }
     &__cards {
         width: 100%;
+        display: flex;
+        justify-content: flex-start;
     }
     &__card {
         display: flex;
@@ -31,32 +39,38 @@
         width: 325px;
         height: 479px;
         padding: 40px 30px 30px 30px;
+        margin-right: 32px;
     }
     &__picture {
         display: flex;
         justify-content: center;
         width: 265px;
         height: 245px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     }
     &__type {
         font-family: "Open Sans";
         font-weight: 600;
         font-size: 14px;
         color: $text-color-purple;
-        margin-top: 40px;
+        margin-top: 45px;
     }
     &__name {
         font-weight: 400;
         font-size: 20px;
         color: $text-color-dark;
-        margin-top: 12px;
+        margin-top: 14px;
     }
     &__price {
         font-family: "Open Sans";
         font-weight: 600;
         font-size: 20px;
         color: $text-color-dark;
-        margin-top: 15px;
+        margin-top: 17px;
     }
     &__link {
         width: 330px;
@@ -73,12 +87,13 @@
         text-align: center;
         color: $text-color-white;
         text-decoration: none;
-        margin-top: 70px;
+        margin-top: 53px;
         &:hover {
             color: $text-color-white;
         }
     }
     &__animation {
+        pointer-events: none;
         position: absolute;
         top: 0;
         left: 0;

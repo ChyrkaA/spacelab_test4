@@ -56,6 +56,15 @@
             margin-left: 100px;
         }
     }
+    .p-pack{
+        &__cards{
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        &__card{
+            margin-bottom: 15px;
+        }
+    }
 }
 
 @media (max-width: 1399px) {
@@ -539,6 +548,22 @@
             }
         }
     }
+    .personal{
+        &__text{
+            width: 90%;
+        }
+    }
+    .p-pack{
+        &__animation{
+            &-1{
+                right: 100px;
+                svg{
+                    width: 61px;
+                    height: 61px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -969,6 +994,110 @@
         height: 50px;
         font-size: 14px;
     }
+
+    .personal{
+        padding-top: 122px;
+        .container{
+            max-width: 335px;
+        }
+        &__title{
+            font-size: 24px;
+            width: 70%;
+        }
+        &__subtitle{
+            font-size: 20px;
+            margin-top: 33px;
+        }
+        &__text{
+            font-size: 14px;
+            width: 100%;
+            margin-top: 20px;
+            line-height: 170%;
+        }
+        &__animation{
+            &-1{
+                top: 57px;
+                left: 66%;
+                svg{
+                    width: 76px;
+                    height: 76px;
+                }
+            }
+            &-2{
+                top: 195px;
+                right: -40px;
+                svg{
+                    width: 92px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+    .p-pack{
+        margin-top: 63px;
+        padding-top: 60px;
+        padding-bottom: 61px;
+        &__wrapper{
+            padding: 0;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__slider{
+            margin-top: 31px;
+        }
+        &__cards{
+            justify-content: space-between;
+            gap: 15px;
+        }
+        &__card{
+            border-radius: 8px;
+            width: 160px;
+            height: max-content;
+            margin: 0;
+
+            padding: 10px 15px 20px 15px;
+
+        }
+        &__picture{
+            width: 130px;
+            height: 120px;
+        }
+        &__type{
+            font-size: 12px;
+            margin-top: 13px;
+            height: 33px;
+        }
+        &__name{
+            font-size: 16px;
+            height: 46px;
+            margin-top: 7px;
+        }
+        &__price{
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        &__link{
+            margin-top: 33px;
+            font-size: 16px;
+            width: 335px;
+            height: 56px;
+        }
+        &__animation{
+            &-1{
+                top: -31px;
+                right: 34px;
+                svg{
+                    width: 61px;
+                    height: 61px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 374px) {
@@ -1101,6 +1230,48 @@
         &__shop,
         &__information {
             margin-top: 31px;
+        }
+    }
+    .personal{
+        .container{
+            max-width: 288px;
+        }
+        &__title{
+            width: 66%;
+        }
+        &__animation{
+            &-1{
+                left: 60%;
+            }
+        }
+    }
+    .p-pack{
+        &__link{
+            width: 279px;
+            margin-top: 30px;
+        }
+
+        &__card{
+            width: 280px;
+            height: 405px;
+            padding: 30px 20px 20px 20px;
+        }
+        &__picture{
+            width: 240px;
+            height: 222px;
+        }
+        &__type{
+            height: 17px;
+            margin-top: 32px;
+        }
+    }
+    .footer{
+        .container{
+            max-width: 100%;
+        }
+        &__wrapper{
+            padding-top: 43px;
+            padding-right: 15px;
         }
     }
 }
