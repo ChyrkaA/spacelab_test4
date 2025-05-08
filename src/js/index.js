@@ -330,3 +330,78 @@ document.addEventListener("DOMContentLoaded", function () {
 // }, {});
 //
 // console.log(wordCounter);
+
+
+const orders = [
+    {id: 1, client: 'Anna', total: 120},
+    {id: 2, client: 'Boris', total: 90},
+    {id: 3, client: 'Anna', total: 30},
+    {id: 4, client: 'Clara', total: 45},
+    {id: 5, client: 'Boris', total: 60},
+];
+
+let result = {};
+
+
+orders.map(order => {
+    if (!result[order.client]) {
+        result[order.client] = {count: 0, total: 0};
+    }
+    result[order.client].count = result[order.client].count + 1;
+    result[order.client].total = result[order.client].total + order.total;
+});
+
+console.log(result);
+
+const products = [
+    {id: 1, name: 'apple', price: 2},
+    {id: 2, name: 'banana', price: 1},
+    {id: 3, name: 'apple', price: 2},
+    {id: 4, name: 'orange', price: 3},
+    {id: 5, name: 'banana', price: 1},
+];
+
+let result2 = {};
+
+products.map(product => {
+    if (!result2[product.name]) {
+        result2[product.name] = {count: 0, totalPrice: 0};
+    }
+    result2[product.name].totalPrice = result2[product.name].totalPrice + product.price;
+    result2[product.name].count = result2[product.name].count + 1;
+});
+
+console.log(result2);
+
+const students = [
+    {name: 'Alice', grades: {math: 4, english: 5, history: 3}},
+    {name: 'Bob', grades: {math: 2, english: 3, history: 4}},
+    {name: 'Charlie', grades: {math: 5, english: 5, history: 5}},
+    {name: 'David', grades: {math: 3, english: 2, history: 4}},
+    {name: 'Eva', grades: {math: 4, english: 5, history: 4}},
+];
+
+let result3 = {};
+
+
+students.map(student => {
+    let counter = 0;
+    let sum = 0;
+
+    if (!result3[student.name]) {
+        result3[student.name] = {average: 0};
+    }
+    for (let key in student.grades) {
+        sum = sum + student.grades[key];
+        counter = counter + 1;
+    }
+    result3[student.name] = {average: sum / counter};
+});
+
+for (let key in result3) {
+    if (result3[key].average >= 4) {
+        console.log(key, result3[key]);
+    }
+}
+
+console.log(result3);

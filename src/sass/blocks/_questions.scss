@@ -1,13 +1,14 @@
 @use "../libs/variables" as *;
 
-.questions{
-    overflow-y: hidden;
+.questions {
+    overflow: hidden;
     width: 100%;
     height: 100vh;
     position: relative;
     background-color: $main-milk-white;
-    .question{
-        &-1, &-2,&-3,&-4,&-5,&-6,&-7,&-8,&-9{
+
+    .question {
+        &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9 {
             display: flex;
             justify-content: space-between;
             opacity: 0;
@@ -16,7 +17,8 @@
             height: 100%;
             width: 100%;
             transition: 0.3s all ease-in-out;
-            &__left{
+
+            &__left {
                 position: relative;
                 width: 50%;
                 background-color: $main-violet;
@@ -24,12 +26,15 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                .question{
+
+                .question {
                     font-weight: 500;
                     font-size: 64px;
                     color: $text-color-white;
                     width: 496px;
-                    &__prev, &__go-back{
+
+                    &__prev, &__go-back {
+                        top: unset;
                         position: absolute;
                         bottom: 32px;
                         left: 35px;
@@ -42,13 +47,15 @@
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
-                        svg{
+
+                        svg {
                             margin-right: 15px;
                         }
                     }
                 }
             }
-            &__right{
+
+            &__right {
                 position: relative;
                 width: 50%;
                 display: flex;
@@ -56,8 +63,8 @@
                 align-items: center;
                 justify-content: center;
 
-                .question{
-                    &__next-style{
+                .question {
+                    &__next-style {
                         z-index: 1;
                         border-radius: 16px;
                         width: 496px;
@@ -75,13 +82,15 @@
                         font-size: 18px;
                         color: $text-color-dark;
                         text-align: left;
-                        &:hover{
+
+                        &:hover {
                             border: 2px solid #8172dd;
                         }
                     }
                 }
             }
-            &__counter{
+
+            &__counter {
                 position: absolute;
                 top: 40px;
                 right: 35px;
@@ -90,7 +99,8 @@
                 font-size: 30px;
                 color: $text-color-dark;
             }
-            &__animations{
+
+            &__animations {
                 pointer-events: none;
                 position: absolute;
                 width: 100%;
@@ -98,21 +108,24 @@
                 top: 0;
                 left: 0;
             }
-            &__animation{
-                &-1, &-2, &-3{
+
+            &__animation {
+                &-1, &-2, &-3 {
                     position: absolute;
                 }
             }
         }
-        &-1, &-9{
 
-            &__form{
+        &-1, &-9 {
+
+            &__form {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 height: 157px;
             }
-            &__label{
+
+            &__label {
                 position: relative;
                 font-family: 'Open Sans';
                 font-weight: 400;
@@ -120,14 +133,16 @@
                 color: rgba($text-color-dark, 0.5);
                 z-index: 1;
             }
-            &__input{
+
+            &__input {
                 margin-top: 15px;
                 border-radius: 16px;
                 width: 496px;
                 height: 105px;
                 background: $text-color-white;
                 position: relative;
-                input{
+
+                input {
                     font-family: 'Open Sans';
                     font-weight: 600;
                     font-size: 18px;
@@ -137,12 +152,14 @@
                     border: none;
                     border-radius: 16px;
                     padding: 40px;
-                    &:focus{
+
+                    &:focus {
                         outline: none;
                     }
                 }
             }
-            &__button{
+
+            &__button {
                 margin-top: 3px;
                 position: absolute;
                 width: 69px;
@@ -157,39 +174,45 @@
                 justify-content: center;
                 align-items: center;
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     top: 116px;
                     left: 46px;
                     animation: rotate 5s linear infinite;
                     transform-origin: center calc(50% - 20px);
                     z-index: 0;
                 }
-                &-2{
+
+                &-2 {
                     bottom: 120px;
                     right: 10px;
                 }
-                &-3{
+
+                &-3 {
                     bottom: -3px;
                     right: 232px;
                 }
             }
         }
-        &-2{
 
-            &__button{
-                &:nth-child(2){
+        &-2 {
+
+            &__button {
+                &:nth-child(2) {
                     margin-bottom: 0;
                 }
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     top: 108px;
                     left: 73px;
                     animation: rotate 5s linear infinite;
                     transform-origin: top left;
                 }
-                &-2{
+
+                &-2 {
                     bottom: 130px;
                     right: 98px;
                     animation: scale 5s linear infinite;
@@ -197,20 +220,23 @@
                 }
             }
         }
-        &-3{
-            &__button{
-                &:nth-child(4){
+
+        &-3 {
+            &__button {
+                &:nth-child(4) {
                     margin-bottom: 0;
                 }
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     top: 106px;
                     right: 135px;
                     animation: rotate 5s linear infinite;
                     transform-origin: bottom left;
                 }
-                &-2{
+
+                &-2 {
                     bottom: -4px;
                     left: 90px;
                     animation: scale 5s linear infinite;
@@ -218,20 +244,23 @@
                 }
             }
         }
-        &-4{
+
+        &-4 {
             &__button {
                 &:nth-child(3) {
                     margin-bottom: 0;
                 }
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     top: 0px;
                     right: 116px;
                     animation: rotate 5s linear infinite;
                     transform-origin: right calc(50% - 70px);
                 }
-                &-2{
+
+                &-2 {
                     bottom: 108px;
                     left: 103px;
                     animation: scale 5s linear infinite;
@@ -239,20 +268,23 @@
                 }
             }
         }
-        &-5{
+
+        &-5 {
             &__button {
                 &:nth-child(3) {
                     margin-bottom: 0;
                 }
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     top: 128px;
                     left: 75px;
                     animation: rotate 5s linear infinite;
                     transform-origin: top left;
                 }
-                &-2{
+
+                &-2 {
                     bottom: 140px;
                     right: 0px;
                     animation: scale 5s linear infinite;
@@ -260,20 +292,23 @@
                 }
             }
         }
-        &-6{
+
+        &-6 {
             &__button {
                 &:nth-child(3) {
                     margin-bottom: 0;
                 }
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     bottom: 60px;
                     left: 50px;
                     animation: rotate 5s linear infinite;
                     transform-origin: top right;
                 }
-                &-2{
+
+                &-2 {
                     top: 161px;
                     right: 114px;
                     animation: rotate 5s linear infinite;
@@ -281,20 +316,23 @@
                 }
             }
         }
-        &-7{
+
+        &-7 {
             &__button {
                 &:nth-child(2) {
                     margin-bottom: 0;
                 }
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     top: 103px;
                     right: 0px;
                     animation: rotate 5s linear infinite;
                     transform-origin: top right;
                 }
-                &-2{
+
+                &-2 {
                     bottom: 74px;
                     left: 103px;
                     animation: scale 5s linear infinite;
@@ -302,50 +340,61 @@
                 }
             }
         }
-        &-8{
-            &__right{
+
+        &-8 {
+            &__right {
                 justify-content: center;
                 align-content: center;
                 flex-wrap: wrap;
                 gap: 20px;
                 flex-direction: row;
-                .question__next-style{
+
+                .question__next-style {
                     width: 330px;
                     height: 105px;
                     margin-bottom: 0;
                 }
             }
+
             &__button {
                 &:nth-child(3), &:nth-child(6) {
                     margin-bottom: 0;
                 }
-                &:nth-child(1){
+
+                &:nth-child(1) {
                     order: 1;
                 }
-                &:nth-child(2){
+
+                &:nth-child(2) {
                     order: 3;
                 }
-                &:nth-child(3){
+
+                &:nth-child(3) {
                     order: 5;
                 }
-                &:nth-child(4){
+
+                &:nth-child(4) {
                     order: 2;
                 }
-                &:nth-child(5){
+
+                &:nth-child(5) {
                     order: 4;
                 }
-                &:nth-child(6){
+
+                &:nth-child(6) {
                     order: 6;
                 }
             }
-            &__animation{
-                &-1{
+
+            &__animation {
+                &-1 {
                     top: 145px;
                     left: 39px;
                     animation: rotate 5s linear infinite;
                     transform-origin: top left;
                 }
-                &-2{
+
+                &-2 {
                     bottom: 47px;
                     right: 58px;
                     animation: scale 5s linear infinite;
@@ -355,6 +404,7 @@
         }
 
     }
+
     .show-height {
         opacity: 1;
         visibility: visible;

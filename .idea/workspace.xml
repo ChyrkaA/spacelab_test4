@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="deae29ed-ee91-4535-b923-84590fa0282b" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/assets/index-kLbsk15B.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/assets/index-sHV8tjoo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/partials/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/partials/questions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/base/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/base/_media.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/blocks/_questions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/blocks/_questions.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +118,7 @@
       <workItem from="1746460544942" duration="7659000" />
       <workItem from="1746560506125" duration="7162000" />
       <workItem from="1746622100062" duration="22407000" />
+      <workItem from="1746694929261" duration="12525000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

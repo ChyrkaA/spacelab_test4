@@ -56,12 +56,13 @@
             margin-left: 100px;
         }
     }
-    .p-pack{
-        &__cards{
+    .p-pack {
+        &__cards {
             flex-wrap: wrap;
             justify-content: space-around;
         }
-        &__card{
+
+        &__card {
             margin-bottom: 15px;
         }
     }
@@ -260,6 +261,24 @@
 
         &__contact {
             margin-left: 120px;
+        }
+    }
+    .questions {
+        .question {
+            &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9 {
+                flex-direction: column;
+
+                &__left, &__right {
+                    height: 50%;
+                    width: 100%;
+                }
+
+                &__counter {
+                    top: -260px;
+                }
+
+
+            }
         }
     }
 }
@@ -548,20 +567,124 @@
             }
         }
     }
-    .personal{
-        &__text{
+    .personal {
+        &__text {
             width: 90%;
         }
     }
-    .p-pack{
-        &__animation{
-            &-1{
+    .p-pack {
+        &__animation {
+            &-1 {
                 right: 100px;
-                svg{
+
+                svg {
                     width: 61px;
                     height: 61px;
                 }
             }
+        }
+    }
+    .header {
+        svg {
+            path {
+                &:nth-child(1) {
+                    fill: #fdc672;
+                }
+
+                &:nth-child(2) {
+                    fill: $main-orange;
+                }
+
+                &:nth-child(3) {
+                    fill: #725cf0;;
+                }
+            }
+        }
+    }
+    .questions {
+        .question {
+            &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9 {
+                &__form {
+                    z-index: 1;
+                }
+
+                &__counter {
+                    top: -60%;
+                }
+
+
+                &__left {
+                    height: 40%;
+                    background-color: transparent;
+
+                    .question {
+                        font-size: 24px;
+                        text-align: center;
+                        color: $text-color-dark;
+
+                        &__prev, &__go-back {
+                            width: 61px;
+                            color: $text-color-dark;
+                            bottom: -350px;
+                            top: unset;
+                            z-index: 1;
+
+                            svg {
+                                path {
+                                    fill: $main-violet
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 60%;
+
+                    &__animations {
+                        z-index: 0;
+                    }
+
+                    .question {
+                        &__next-style {
+                            width: 335px;
+                            height: 82px;
+                            padding: 19px 20px;
+                            font-size: 16px;
+                            text-align: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
+            &-1, &-9 {
+                &__input {
+                    width: 335px;
+                    height: 56px;
+
+                    input {
+                        padding: 15px;
+                    }
+                }
+
+                &__button {
+                    width: 32px;
+                    height: 32px;
+
+                    svg {
+                        width: 8px;
+                        height: 12px;
+                    }
+                }
+            }
+
+
+        }
+
+        .question {
+
+
         }
     }
 }
@@ -719,44 +842,54 @@
         &__right {
             margin-top: 110px;
         }
+
         &__items {
             padding-left: 20px;
             align-items: flex-start;
         }
+
         &__text {
             font-size: 14px;
             margin-left: 26px;
             width: 263px;
         }
+
         &__item {
             height: auto;
             margin-bottom: 40px;
+
             svg {
                 width: 46px;
                 height: 38px;
             }
+
             &:nth-child(2) {
                 margin-bottom: 40px;
+
                 svg {
                     margin-left: 5px;
                     width: 39px;
                     height: 44px;
                 }
+
                 .healthy__text {
                     margin-left: 28px;
                 }
             }
+
             &:nth-child(3) {
                 svg {
                     margin-left: 5px;
                     width: 38px;
                     height: 48px;
                 }
+
                 .healthy__text {
                     margin-left: 28px;
                 }
             }
         }
+
         &__imgs {
             &-left {
                 width: 202px;
@@ -764,6 +897,7 @@
                 left: 0px;
                 top: -19px;
             }
+
             &-right {
                 width: 294px;
                 height: 170px;
@@ -774,36 +908,44 @@
     }
     .tellus {
         margin-top: 96px;
+
         &__title {
             font-size: 24px;
             width: 90%;
             margin-top: 30px;
         }
+
         &__text {
             font-size: 14px;
             width: 90%;
             margin-top: 14px;
         }
+
         .take__quiz {
             margin-top: 29px;
         }
+
         &__bottom {
             margin-top: 60px;
         }
+
         &__info {
             &-title {
                 font-size: 24px;
             }
+
             &-text {
                 font-size: 14px;
                 margin-top: 14px;
             }
+
             &-link {
                 font-size: 14px;
                 margin-top: 22px;
                 margin-left: 0px;
                 justify-content: flex-start;
                 width: 107px;
+
                 svg {
                     width: 6px;
                     height: 10px;
@@ -811,21 +953,26 @@
                 }
             }
         }
+
         &__slider {
             top: 249px;
             padding: 0 20px;
             height: 352px;
         }
+
         &__slide {
             &-info {
                 margin-left: 5px;
+
                 &__type {
                     font-size: 12px;
                     margin-top: 19px;
                 }
+
                 &__name {
                     margin-top: 14px;
                 }
+
                 &__descr {
                     margin-top: -4px;
                     font-size: 14px;
@@ -836,36 +983,45 @@
     .customer {
         z-index: 1;
         margin-top: 292px;
+
         &__top {
             svg {
                 width: 50px;
                 height: 57px;
             }
         }
+
         &__title {
             font-size: 20px;
             width: 90%;
             margin-top: 30px;
         }
+
         &__text {
             font-size: 14px;
             width: 100%;
             margin-top: 15px;
         }
+
         &__bottom {
             margin-top: 32px;
         }
+
         &__card {
             padding: 30px 16px 0px 16px;
+
             &-title {
                 margin-top: 16px;
                 height: auto;
             }
+
             &-text {
                 margin-top: 14px;
             }
+
             &-user {
                 margin-top: 84px;
+
                 &-name {
                     font-size: 14px;
                     margin-top: -6px;
@@ -878,41 +1034,51 @@
         z-index: 10;
         margin-top: 60px;
         padding-bottom: 65px;
+
         &__wrapper {
             svg {
                 margin-left: -17px;
             }
         }
+
         &__animations {
             z-index: 10;
         }
+
         &__animation1 {
             bottom: -50px;
         }
+
         &__animation2 {
             top: -14px;
             z-index: 10;
         }
+
         &__animations {
             overflow-x: visible;
         }
+
         &__title {
             font-size: 24px;
         }
+
         &__text {
             font-size: 14px;
             margin-top: 17px;
         }
+
         &__goto {
             font-size: 14px;
             width: 107px;
             margin-top: 20px;
+
             svg {
                 width: 6px;
                 height: 10px;
                 margin-left: 6px;
             }
         }
+
         .take__quiz {
             margin-top: 21px;
         }
@@ -920,23 +1086,28 @@
     .footer {
         padding-top: 4px;
         padding-bottom: 90px;
+
         .container {
             max-width: 336px;
         }
+
         &__wrapper {
             padding-top: 26px;
             flex-wrap: wrap;
         }
+
         &__info {
             top: 10px;
             width: 100%;
             position: relative;
+
             &-text {
                 position: absolute;
                 top: 570px;
                 width: 100%;
             }
         }
+
         &__shop,
         &__information {
             margin-top: 48px;
@@ -950,39 +1121,49 @@
             &-categories {
                 margin-top: 22px;
             }
+
             &-category {
                 a {
                     line-height: 148%;
                 }
             }
         }
+
         &__information {
             padding-left: 8px;
+
             &-categories {
                 display: flex;
                 flex-direction: column;
             }
+
             &-category {
                 &:nth-child(4) {
                     order: 1;
                 }
+
                 &:nth-child(1) {
                     order: 2;
                 }
+
                 &:nth-child(2) {
                     order: 3;
                 }
+
                 &:nth-child(3) {
                     order: 4;
                 }
+
                 &:nth-child(5) {
                     order: 5;
                 }
             }
         }
+
         &__contact {
             margin-left: 0;
             margin-top: 25px;
+
             &-category {
                 margin-bottom: 11px;
             }
@@ -995,65 +1176,78 @@
         font-size: 14px;
     }
 
-    .personal{
+    .personal {
         padding-top: 122px;
-        .container{
+
+        .container {
             max-width: 335px;
         }
-        &__title{
+
+        &__title {
             font-size: 24px;
             width: 70%;
         }
-        &__subtitle{
+
+        &__subtitle {
             font-size: 20px;
             margin-top: 33px;
         }
-        &__text{
+
+        &__text {
             font-size: 14px;
             width: 100%;
             margin-top: 20px;
             line-height: 170%;
         }
-        &__animation{
-            &-1{
+
+        &__animation {
+            &-1 {
                 top: 57px;
                 left: 66%;
-                svg{
+
+                svg {
                     width: 76px;
                     height: 76px;
                 }
             }
-            &-2{
+
+            &-2 {
                 top: 195px;
                 right: -40px;
-                svg{
+
+                svg {
                     width: 92px;
                     height: 70px;
                 }
             }
         }
     }
-    .p-pack{
+    .p-pack {
         margin-top: 63px;
         padding-top: 60px;
         padding-bottom: 61px;
-        &__wrapper{
+
+        &__wrapper {
             padding: 0;
             width: 100%;
             padding-left: 20px;
             padding-right: 20px;
         }
+
         &__title {
             font-size: 20px;
         }
-        &__slider{
+
+        &__slider {
             margin-top: 31px;
         }
-        &__cards{
+
+        &__cards {
             justify-content: space-between;
             gap: 15px;
         }
-        &__card{
+
+        &__card {
             border-radius: 8px;
             width: 160px;
             height: max-content;
@@ -1062,38 +1256,344 @@
             padding: 10px 15px 20px 15px;
 
         }
-        &__picture{
+
+        &__picture {
             width: 130px;
             height: 120px;
         }
-        &__type{
+
+        &__type {
             font-size: 12px;
             margin-top: 13px;
             height: 33px;
         }
-        &__name{
+
+        &__name {
             font-size: 16px;
             height: 46px;
             margin-top: 7px;
         }
-        &__price{
+
+        &__price {
             font-weight: 700;
             font-size: 16px;
             margin-top: 10px;
         }
-        &__link{
+
+        &__link {
             margin-top: 33px;
             font-size: 16px;
             width: 335px;
             height: 56px;
         }
-        &__animation{
-            &-1{
+
+        &__animation {
+            &-1 {
                 top: -31px;
                 right: 34px;
-                svg{
+
+                svg {
                     width: 61px;
                     height: 61px;
+                }
+            }
+        }
+    }
+    .header {
+        height: 70px;
+        padding-left: 20px;
+
+        svg {
+            width: 34px;
+            height: 40px;
+        }
+    }
+    .questions {
+        .question {
+            &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9 {
+                &__animations {
+                    display: none;
+                }
+
+                &__counter {
+                    font-size: 20px;
+                    right: 20px;
+                    top: -78%;
+                }
+
+                &__left {
+                    height: 46%;
+                    align-items: flex-end;
+                    padding-bottom: 4px;
+
+                    .question {
+                        &__go-back, &__prev {
+                            left: 20px;
+                            bottom: -117.5%;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 54%;
+                    justify-content: flex-start;
+                    padding-top: 12px;
+                }
+
+                &__label {
+                    display: none;
+                }
+
+                &__button {
+                    margin-top: 0;
+                    right: 11px;
+                    background-color: #ddd;;
+                }
+            }
+
+
+            &-2 {
+                &__left {
+                    padding-bottom: 28px;
+
+                    .question {
+                        &__prev {
+                            bottom: -110%;
+                            left: 20px;
+                        }
+                    }
+                }
+
+                &__right {
+                    padding-top: 3px;
+                    padding-left: 20px;
+                    flex-direction: row;
+                    align-items: flex-start;
+
+                    .question {
+                        &__next-style {
+                            width: 160px;
+                            height: 104px;
+                            margin: 0;
+
+                            &:nth-child(2) {
+                                margin-left: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-3 {
+                &__left {
+                    padding-bottom: 2px;
+                    height: 23%;
+
+                    .question {
+                        &__prev {
+                            bottom: -319%;
+                            left: 20px;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 77%;
+                    padding-top: 28px;
+
+                    .question {
+                        &__next-style {
+                            height: auto;
+                            line-height: 133%;
+                            margin-bottom: 7px;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -25%;
+                }
+            }
+
+            &-4 {
+                &__left {
+                    height: 37.5%;
+                    padding-bottom: 10px;
+
+                    .question {
+                        width: 335px;
+
+                    }
+
+                    .question {
+                        &__prev {
+                            bottom: -157%;
+                            left: 20px;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 62.5%;
+                    padding-top: 22px;
+
+                    .question {
+                        &__next-style {
+                            height: 60px;
+                            width: 335px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -54%;
+                }
+            }
+
+            &-5 {
+                &__left {
+                    height: 36.5%;
+
+                    .question {
+                        &__prev {
+                            bottom: -164%;
+                            left: 20px;
+                        }
+                    }
+                }
+
+                &__right {
+                    padding-top: 27px;
+                    height: 63.5%
+                }
+
+                .question {
+                    &__next-style {
+                        width: 335px;
+                        height: 60px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                &__counter {
+                    top: -52%;
+                }
+            }
+
+            &-6 {
+                &__left {
+                    height: 31%;
+
+                    .question {
+                        &__prev {
+                            bottom: -211%;
+                            left: 20px;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 69%;
+                    padding-top: 27px;
+
+                    .question {
+                        &__next-style {
+                            width: 335px;
+                            height: auto;
+                            margin-bottom: 10px;
+                            line-height: 122%;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -39%;
+                }
+            }
+
+            &-7 {
+                &__left {
+                    height: 44.5%;
+
+                    .question {
+                        &__prev {
+                            bottom: -117%;
+                            left: 20px;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 55.5%;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    padding-top: 26px;
+                    padding-left: 20px;
+
+                    .question {
+                        &__next-style {
+                            margin: 0;
+                            width: 160px;
+                            height: 104px;
+
+                            &:nth-child(2) {
+                                margin-left: 15px;
+                            }
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -73%;
+                }
+            }
+
+            &-8 {
+                &__left {
+                    height: 26%;
+
+                    .question {
+                        width: 335px;
+
+                        &__prev {
+                            bottom: -271%;
+                            left: 20px;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 74%;
+                    align-content: flex-start;
+                    padding-top: 28px;
+                    padding-left: 20px;
+                    column-gap: 15px;
+                    row-gap: 10px;
+
+                    .question {
+                        &__next-style {
+                            width: 160px;
+                            height: 104px;
+                            line-height: 137%;
+                            padding: 19px 18px;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -30%;
+                }
+            }
+
+            &-9 {
+                &__left {
+                    .question {
+                        &__prev {
+                            bottom: -109.5%;
+                        }
+
+                    }
                 }
             }
         }
@@ -1110,9 +1610,11 @@
         &__header {
             width: 280px;
         }
+
         &__content {
             width: 308px;
         }
+
         &__right {
             picture {
                 height: 406px;
@@ -1120,31 +1622,38 @@
                 margin-left: -63px;
             }
         }
+
         &__animation1 {
             top: 29.5%;
             right: -4%;
         }
+
         &__animation3 {
             top: 44%;
         }
     }
     .healthy {
         margin-top: -277px;
+
         &__title {
             width: 90%;
         }
+
         &__animation1 {
             right: 37px;
         }
+
         &__text {
             width: 214px;
             line-height: 122%;
         }
+
         &__imgs {
             &-left {
                 width: 168px;
                 height: 144px;
             }
+
             &-right {
                 width: 256px;
                 height: 148px;
@@ -1154,22 +1663,28 @@
     }
     .tellus {
         margin-top: 60px;
+
         &__text {
             width: 87%;
         }
+
         &__animations {
             overflow-x: visible;
         }
+
         &__animation2 {
             top: -15px;
         }
+
         .take__quiz {
             margin-top: 22px;
         }
+
         &__slider {
             top: 270px;
             height: 368px;
         }
+
         &__info {
             &-text {
                 width: 86%;
@@ -1178,12 +1693,15 @@
     }
     .customer {
         margin-top: 329px;
+
         &__text {
             width: 89%;
             line-height: 165%;
         }
+
         &__card {
             padding: 30px 20px 0px 20px;
+
             &-text {
                 margin-top: 11px;
             }
@@ -1197,23 +1715,28 @@
     }
     .ready {
         margin-top: 58px;
+
         &__wrapper {
             svg {
                 margin-left: 0;
             }
         }
+
         &__text {
             margin-top: 16px;
             width: 90%;
         }
+
         &__animation2 {
             left: -8px;
         }
+
         &__goto {
             svg {
                 margin-left: 6px;
             }
         }
+
         &__animation1 {
             bottom: -36px;
             right: 6px;
@@ -1224,54 +1747,334 @@
             padding-left: 15px;
             padding-right: 32px;
         }
+
         &__info {
             top: -7px;
         }
+
         &__shop,
         &__information {
             margin-top: 31px;
         }
     }
-    .personal{
-        .container{
+    .personal {
+        .container {
             max-width: 288px;
         }
-        &__title{
+
+        &__title {
             width: 66%;
         }
-        &__animation{
-            &-1{
+
+        &__animation {
+            &-1 {
                 left: 60%;
             }
         }
     }
-    .p-pack{
-        &__link{
+    .p-pack {
+        &__link {
             width: 279px;
             margin-top: 30px;
         }
 
-        &__card{
+        &__card {
             width: 280px;
             height: 405px;
             padding: 30px 20px 20px 20px;
         }
-        &__picture{
+
+        &__picture {
             width: 240px;
             height: 222px;
         }
-        &__type{
+
+        &__type {
             height: 17px;
             margin-top: 32px;
         }
     }
-    .footer{
-        .container{
+    .footer {
+        .container {
             max-width: 100%;
         }
-        &__wrapper{
+
+        &__wrapper {
             padding-top: 43px;
             padding-right: 15px;
         }
     }
+
+    .questions {
+        position: relative;
+
+        .question {
+            &-1 {
+                &__left {
+                    padding-bottom: 8px;
+                }
+
+                &__right {
+                    padding-top: 6px;
+                }
+
+                &__input {
+                    width: 280px;
+                }
+
+                &__counter {
+                    top: -76%;
+                }
+            }
+
+            &-2 {
+                &__left {
+                    height: 45%;
+
+                    .question {
+                        &__prev {
+                            bottom: -112%;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 55%;
+
+                    .question {
+                        &__next-style {
+                            width: 132px;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -73%;
+                }
+            }
+
+            &-3 {
+                padding-bottom: 60px;
+
+                &__left {
+                    height: 35%;
+
+                    .question {
+                        width: 280px;
+
+                        &__prev {
+                            bottom: -212%;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 65%;
+                    padding-top: 30px;
+
+                    .question {
+                        &__next-style {
+                            padding: 19px 46px;
+                            width: 280px;
+                        }
+                    }
+                }
+
+                &__btns {
+                    overflow-y: scroll;
+                }
+
+                &__counter {
+                    top: -45%;
+                }
+            }
+
+            &-4 {
+                &__left {
+                    height: 24%;
+
+                    .question {
+                        &__prev {
+                            bottom: -246%;
+                        }
+                    }
+
+                }
+
+                &__right {
+                    height: 76%;
+
+                    .question {
+                        &__next-style {
+                            width: 280px;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -42%;
+                }
+            }
+
+            &-5 {
+                &__left {
+                    height: 20.5%;
+
+                    .question {
+                        width: 280px;
+
+                        &__prev {
+                            bottom: -305%;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 79.5%;
+
+                    .question {
+                        &__next-style {
+                            width: 280px;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -35.5%;
+                }
+            }
+
+            &-6 {
+                &__left {
+                    height: 10.5%;
+
+                    .question {
+                        &__prev {
+                            bottom: -691%;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 89.5%;
+
+                    .question {
+                        &__next-style {
+                            width: 280px;
+                            padding: 19px 17px;
+                            line-height: 125%;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -20.5%;
+                }
+            }
+
+            &-7 {
+                &__left {
+                    height: 33%;
+
+                    .question {
+                        width: 280px;
+
+                        &__prev {
+                            bottom: -152%;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 67%;
+
+                    .question {
+                        &__next-style {
+                            width: 132px;
+                        }
+                    }
+                }
+
+                &__counter {
+                    top: -61%;
+                }
+
+            }
+
+            &-8 {
+                padding-bottom: 110px;
+
+                &__left {
+                    .question {
+                        width: 280px;
+
+                        &__prev {
+                            bottom: -331%;
+
+                        }
+                    }
+
+                    height: 25%;
+                }
+
+                &__right {
+                    flex-direction: column;
+                    height: 75%;
+
+                    .question {
+                        &__next-style {
+                            width: 132px;
+                            padding: 19px 8px
+                        }
+                    }
+                }
+
+                &__btns {
+                    height: auto;
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    overflow-y: scroll;
+                    column-gap: 15px;
+                    row-gap: 10px;
+                }
+
+                &__counter {
+                    top: -47%;
+                }
+            }
+
+            &-9 {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &__left {
+                    height: 48%;
+
+                    .question {
+                        width: 280px;
+
+                        &__prev {
+                            bottom: -99.5%;
+                        }
+                    }
+                }
+
+                &__right {
+                    height: 52%;
+                }
+
+                &__input {
+                    width: 280px;
+                }
+
+                &__counter {
+                    top: -83%;
+                }
+            }
+        }
+    }
+
+
 }
