@@ -1,4 +1,21 @@
+import JustValidate from "just-validate";
+
 document.addEventListener("DOMContentLoaded", () => {
+    // const valid1 = new JustValidate('#form1');
+    // const valid9 = new JustValidate('#form9');
+    //
+    // valid1.addField('#name', [
+    //     {
+    //         rule: 'required',
+    //         errorMessage: 'Please enter your first name',
+    //     },
+    //     {
+    //         rule: 'minLength',
+    //         value: 3,
+    //         errorMessage: 'Name must be at least 3 characters long',
+    //     }
+    // ]);
+
     function goBack() {
         if (
             document.referrer &&
@@ -26,50 +43,161 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function setLocalStorage(id, name) {
-        const inputField = document.querySelector(id);
-        const inputValue = inputField.value;
-
-        if (inputValue) {
-            localStorage.setItem(name, inputValue);
-        }
-
-        const storedValue = localStorage.getItem(name);
-        if (storedValue) {
-            console.log("Saved data:", storedValue);
+    function setLocalStorage(value, name) {
+        if (value) {
+            localStorage.setItem(name, value);
         }
     }
+
+    function validate(formId, dataQuestion, nextButton) {
+
+        const form = document.querySelector(`#${formId}`);
+        const input = form.querySelector("input");
+        const inputValue = input.value;
+
+        const valid = new JustValidate(form, {
+            focusInvalidField: true,
+            lockForm: true,
+            validateBeforeSubmitting: true,
+
+            errorFieldCssClass: ['invalid'],
+        });
+        const field = input.id;
+
+        valid.addField(`#${field}`, [
+            {
+                rule: 'required',
+                errorMessage: 'Please enter your first name',
+            },
+            {
+                rule: 'minLength',
+                value: 3,
+                errorMessage: 'Name must be at least 3 characters long',
+            },
+        ]);
+
+
+        valid.revalidateField(`#${field}`)
+             .then((isValid) => {
+                 if (isValid) {
+                     console.log('valid');
+                     setLocalStorage(inputValue, dataQuestion);
+                     toggleQuestion(nextButton, "next");
+                 }
+             });
+
+    }
+
 
     document.addEventListener("click", function (e) {
         const nextButton = e.target.closest(".question__next");
         const prevButton = e.target.closest(".question__prev");
-        const inputButton1 = e.target.closest(".question-1__button");
-        const inputButton9 = e.target.closest(".question-9__button");
-        const form1 = document.querySelector(".question-1__form");
-        const form9 = document.querySelector(".question-9__form");
+        const dataQuestion = e.target.closest(".show-height")
+                              .getAttribute("data-question");
+        if (nextButton) {
+            if (nextButton.closest('form')) {
 
-        if (nextButton && inputButton1) {
-            if (form1.checkValidity()) {
-                e.preventDefault();
-                setLocalStorage("#question-1__input", 'name');
+                const form = nextButton.closest('form');
+
+                validate(form.id, dataQuestion, nextButton);
+                //
+                // console.log(form.id);
+                // const inputValue = nextButton.parentElement.querySelector(
+                //     "input").value;
+                // const valid = new JustValidate(form, {
+                //     focusInvalidField: true,
+                //     lockForm: true,
+                //     validateBeforeSubmitting: true,
+                // });
+                // const nameField = form.querySelector('#name');
+                // const emailField = form.querySelector('#email');
+                // if (nameField) {
+                //     valid.addField('#name', [
+                //         {
+                //             rule: 'required',
+                //             errorMessage: 'Please enter your first name',
+                //         },
+                //         {
+                //             rule: 'minLength',
+                //             value: 3,
+                //             errorMessage: 'Name must be at least 3 characters long',
+                //         },
+                //     ]);
+                // }
+                // if (emailField) {
+                //     valid.addField('#email', [
+                //         {
+                //             rule: 'required',
+                //             errorMessage: 'Please enter your first name',
+                //         },
+                //         {
+                //             rule: 'minLength',
+                //             value: 3,
+                //             errorMessage: 'Name must be at least 3 characters long',
+                //         },
+                //     ]);
+                //
+                // }
+                //
+                // valid.validate()
+                //      .then((isValid) => {
+                //          if (isValid) {
+                //              console.log('valid');
+                //              setLocalStorage(inputValue, dataQuestion);
+                //              toggleQuestion(nextButton, "next");
+                //          }
+                //      });
+
+                // valid
+                //     .addField('#name', [
+                //         {
+                //             rule: 'required',
+                //             errorMessage: 'Please enter your first name',
+                //         },
+                //         {
+                //             rule: 'minLength',
+                //             value: 3,
+                //             errorMessage: 'Name must be at least 3 characters long',
+                //         },
+                //
+                //     ])
+                //     .addField('#email', [
+                //         {
+                //             rule: 'required',
+                //             errorMessage: 'Please enter your first name',
+                //         },
+                //         {
+                //             rule: 'minLength',
+                //             value: 3,
+                //             errorMessage: 'Name must be at least 3 characters long',
+                //         },
+                //     ])
+                // ;
+
+                // if (form.checkValidity()) {
+                //     e.preventDefault();
+                //     const inputValue = nextButton.parentElement.querySelector(
+                //         "input").value;
+                //     if (form.closest('.question-9__form')) {
+                //         setLocalStorage(inputValue, dataQuestion);
+                //         window.location.href = 'personal.html';
+                //
+                //     } else {
+                //         setLocalStorage(inputValue, dataQuestion);
+                //         toggleQuestion(nextButton, "next");
+                //     }
+                // } else {
+                //     e.preventDefault();
+                //     form.reportValidity();
+                // }
+            } else {
+                const answer = nextButton.getAttribute('data-answer');
+                setLocalStorage(answer, dataQuestion);
                 toggleQuestion(nextButton, "next");
-            } else {
-                e.preventDefault();
-                form1.reportValidity();
             }
-        } else if (nextButton && inputButton9) {
-            if (form9.checkValidity()) {
-                e.preventDefault();
-                setLocalStorage("#question-9__input", 'email');
-                window.location.href = 'personal.html';
-            } else {
-                e.preventDefault();
-                form9.reportValidity();
-            }
-        } else if (nextButton && !inputButton1 && !inputButton9) {
-            toggleQuestion(nextButton, "next");
         } else if (prevButton) {
             toggleQuestion(prevButton, "prev");
         }
     });
+
 });

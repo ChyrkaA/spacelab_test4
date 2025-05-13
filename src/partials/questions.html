@@ -1,7 +1,8 @@
 <section class="questions">
-    <div class="question-1 question show-height">
+    <div class="question-1 question show-height" data-question='name'>
         <div class="question-1__left">
             <div class="question-1__question question">What’s your first name?</div>
+
             <button class="question-1__button question__go-back">
                 <svg width="9"
                      height="15"
@@ -16,12 +17,15 @@
                 Back
             </button>
         </div>
+
         <div class="question-1__right">
-            <form class="question-1__form">
-                <label for="question-1__input" class="question-1__label">First
+            <form class="question-1__form form" id="form1">
+                <label for="name" class="question-1__label">First
                     Name</label>
+
                 <div class="question-1__input">
-                    <input type="text" id="question-1__input" required>
+                    <input type="text" id="name">
+
                     <button class="question-1__button question__next" type="submit">
                         <svg width="9"
                              height="16"
@@ -37,6 +41,7 @@
                 </div>
             </form>
             <div class="question-1__counter">1/9</div>
+
             <div class="question-1__animations">
                 <div class="question-1__animation-1">
                     <svg width="156"
@@ -47,6 +52,7 @@
                         <circle cx="78" cy="78" r="78" fill="#F7906E" />
                     </svg>
                 </div>
+
                 <div class="question-1__animation-2">
                     <svg width="223"
                          height="183"
@@ -58,6 +64,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-1__animation-3">
                     <svg width="183"
                          height="182"
@@ -72,9 +79,11 @@
             </div>
         </div>
     </div>
-    <div class="question-2 question">
+
+    <div class="question-2 question" data-question='Do you smoke?'>
         <div class="question-2__left">
             <div class="question-2__question question">Do you smoke?</div>
+
             <button class="question-2__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -90,12 +99,17 @@
             </button>
         </div>
         <div class="question-2__right">
-            <button class="question-2__button question__next-style question__next">Yes
+            <button class="question-2__button question__next-style question__next"
+                    data-answer='yes'>Yes
             </button>
-            <button class="question-2__button question__next-style question__next">No
+
+            <button class="question-2__button question__next-style question__next"
+                    data-answer='no'>No
             </button>
-            <div class="question-2__counter question__cou question__next-stylenter">2/9
+
+            <div class="question-2__counter">2/9
             </div>
+
             <div class="question-2__animations">
                 <div class="question-2__animation-1">
                     <svg width="160"
@@ -108,6 +122,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-2__animation-2">
                     <svg width="85"
                          height="85"
@@ -120,9 +135,10 @@
             </div>
         </div>
     </div>
-    <div class="question-3 question">
+    <div class="question-3 question" data-question='What is your eating habits?'>
         <div class="question-3__left">
             <div class="question-3__question question">What is your eating habits?</div>
+
             <button class="question-3__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -139,24 +155,31 @@
         </div>
         <div class="question-3__right">
             <div class="question-3__btns">
-                <button class="question-3__button question__next-style question__next">
-                    Vegan
-                    diet
+                <button class="question-3__button question__next-style question__next"
+                        data-answer="Vegan diet">
+                    Vegan diet
                 </button>
-                <button class="question-3__button question__next-style question__next">
+
+                <button class="question-3__button question__next-style question__next"
+                        data-answer="Vegetarian diet">
                     Vegetarian diet
                 </button>
-                <button class="question-3__button question__next-style question__next">My
-                    diet
-                    is generally healthy and includes animal protein, fish and veggies
+
+                <button class="question-3__button question__next-style question__next"
+                        data-answer="My diet is generally healthy and includes animal protein, fish and veggies">
+                    My
+                    diet is generally healthy and includes animal protein, fish and
+                    veggies
                 </button>
-                <button class="question-3__button question__next-style question__next">My
-                    diet
-                    includes fast food and soft drinks
+
+                <button class="question-3__button question__next-style question__next"
+                        data-answer="My diet includes fast food and soft drinks">My
+                    diet includes fast food and soft drinks
                 </button>
             </div>
 
             <div class="question-3__counter">3/9</div>
+
             <div class="question-3__animations">
                 <div class="question-3__animation-1">
                     <svg width="155"
@@ -167,6 +190,7 @@
                         <circle cx="77.5" cy="77.5" r="77.5" fill="#F6906E" />
                     </svg>
                 </div>
+
                 <div class="question-3__animation-2">
                     <svg width="210"
                          height="264"
@@ -181,11 +205,13 @@
             </div>
         </div>
     </div>
-    <div class="question-4 question">
+    <div class="question-4 question" data-question="How frequently do you consume
+                alcoholic beverages?">
         <div class="question-4__left">
             <div class="question-4__question question">How frequently do you consume
                 alcoholic beverages?
             </div>
+
             <button class="question-4__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -200,17 +226,25 @@
                 Back
             </button>
         </div>
+
         <div class="question-4__right">
-            <button class="question-4__button question__next-style question__next">≤ 3
+            <button class="question-4__button question__next-style question__next"
+                    data-answer="≤ 3 times per week">≤ 3
                 times per week
             </button>
-            <button class="question-4__button question__next-style question__next">4 - 7
+
+            <button class="question-4__button question__next-style question__next"
+                    data-answer="4 - 7 times per week">4 - 7
                 times per week
             </button>
-            <button class="question-4__button question__next-style question__next">7+
+
+            <button class="question-4__button question__next-style question__next"
+                    data-answer="7+ times per week">7+
                 times per week
             </button>
+
             <div class="question-4__counter">4/9</div>
+
             <div class="question-4__animations">
                 <div class="question-4__animation-1">
                     <svg width="210"
@@ -223,6 +257,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-4__animation-2">
                     <svg width="177"
                          height="177"
@@ -235,11 +270,14 @@
             </div>
         </div>
     </div>
-    <div class="question-5 question">
+
+    <div class="question-5 question"
+         data-question="How frequently do you have cold/flu symptoms?">
         <div class="question-5__left">
             <div class="question-5__question question">How frequently do you have cold/flu
                 symptoms?
             </div>
+
             <button class="question-5__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -254,17 +292,25 @@
                 Back
             </button>
         </div>
+
         <div class="question-5__right">
-            <button class="question-5__button question__next-style question__next">≤ 2 per
+            <button class="question-5__button question__next-style question__next"
+                    data-answer="≤ 2 per year">≤ 2 per
                 year
             </button>
-            <button class="question-5__button question__next-style question__next">3 - 5
+
+            <button class="question-5__button question__next-style question__next"
+                    data-answer="3 - 5 times per year">3 - 5
                 times per year
             </button>
-            <button class="question-5__button question__next-style question__next">5+
+
+            <button class="question-5__button question__next-style question__next"
+                    data-answer="5+ times per week">5+
                 times per week
             </button>
+
             <div class="question-5__counter">5/9</div>
+
             <div class="question-5__animations">
                 <div class="question-5__animation-1">
                     <svg width="200"
@@ -277,6 +323,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-5__animation-2">
                     <svg width="111"
                          height="308"
@@ -289,9 +336,10 @@
             </div>
         </div>
     </div>
-    <div class="question-6 question">
+    <div class="question-6 question" data-question="Describe your stress level">
         <div class="question-6__left">
             <div class="question-6__question question">Describe your stress level</div>
+
             <button class="question-6__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -306,17 +354,26 @@
                 Back
             </button>
         </div>
+
         <div class="question-6__right">
-            <button class="question-6__button question__next-style question__next">I feel
+            <button class="question-6__button question__next-style question__next"
+                    data-answer="I feel calm and relaxed most of the time">I feel
                 calm and relaxed most of the time
             </button>
-            <button class="question-6__button question__next-style question__next">I get
+
+            <button class="question-6__button question__next-style question__next"
+                    data-answer="I get nerevous from time to time">I get
                 nerevous from time to time
             </button>
-            <button class="question-6__button question__next-style question__next">I’m
-                under a lot of stress most of the time
+
+            <button class="question-6__button question__next-style question__next"
+                    data-answer="I’m
+                under a lot of stress most of the time">I’m under a lot of stress most of
+                the time
             </button>
+
             <div class="question-6__counter">6/9</div>
+
             <div class="question-6__animations">
                 <div class="question-6__animation-1">
                     <svg width="160"
@@ -329,6 +386,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-6__animation-2">
                     <svg width="154"
                          height="154"
@@ -341,11 +399,14 @@
             </div>
         </div>
     </div>
-    <div class="question-7 question">
+
+    <div class="question-7 question"
+         data-question="Have you ever been diagnosted with high blood glucose level?">
         <div class="question-7__left">
             <div class="question-7__question question">Have you ever been diagnosted with
                 high blood glucose level?
             </div>
+
             <button class="question-7__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -360,12 +421,18 @@
                 Back
             </button>
         </div>
+
         <div class="question-7__right">
-            <button class="question-7__button question__next-style question__next">Yes
+            <button class="question-7__button question__next-style question__next"
+                    data-answer="Yes">Yes
             </button>
-            <button class="question-7__button question__next-style question__next">No
+
+            <button class="question-7__button question__next-style question__next"
+                    data-answer="No">No
             </button>
+
             <div class="question-7__counter">7/9</div>
+
             <div class="question-7__animations">
                 <div class="question-7__animation-1">
                     <svg width="212"
@@ -378,6 +445,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-7__animation-2">
                     <svg width="113"
                          height="113"
@@ -390,10 +458,12 @@
             </div>
         </div>
     </div>
-    <div class="question-8 question">
+
+    <div class="question-8 question" data-question="Tell us what you want to focus on">
         <div class="question-8__left">
             <div class="question-8__question question">Tell us what you want to focus on
             </div>
+
             <button class="question-8__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -408,35 +478,48 @@
                 Back
             </button>
         </div>
+
         <div class="question-8__right">
             <div class="question-8__btns">
-                <button class="question-8__button question__next-style question__next">
+                <button class="question-8__button question__next-style question__next"
+                        data-answer="Weight managment">
                     Weight
                     managment
                 </button>
-                <button class="question-8__button question__next-style question__next">
+
+                <button class="question-8__button question__next-style question__next"
+                        data-answer="Immune boost">
                     Immune
                     boost
                 </button>
-                <button class="question-8__button question__next-style question__next">I
+
+                <button class="question-8__button question__next-style question__next"
+                        data-answer="I need a bassic kit for a daily intake">I
                     need
                     a bassic kit for a daily intake
                 </button>
-                <button class="question-8__button question__next-style question__next">
+
+                <button class="question-8__button question__next-style question__next"
+                        data-answer="Stress relief">
                     Stress
                     relief
                 </button>
-                <button class="question-8__button question__next-style question__next">
+
+                <button class="question-8__button question__next-style question__next"
+                        data-answer="Need to solve a sprcific problem">
                     Need to
                     solve a sprcific problem
                 </button>
-                <button class="question-8__button question__next-style question__next">All
+
+                <button class="question-8__button question__next-style question__next"
+                        data-answer="All in one">All
                     in
                     one
                 </button>
             </div>
 
             <div class="question-8__counter">8/9</div>
+
             <div class="question-8__animations">
                 <div class="question-8__animation-1">
                     <svg width="171"
@@ -449,6 +532,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-8__animation-2">
                     <svg width="148"
                          height="148"
@@ -461,9 +545,11 @@
             </div>
         </div>
     </div>
-    <div class="question-9 question">
+
+    <div class="question-9 question" data-question="Mail">
         <div class="question-9__left">
             <div class="question-9__question question">What’s your email address?</div>
+
             <button class="question-9__button-prev question__prev">
                 <svg width="9"
                      height="15"
@@ -478,11 +564,14 @@
                 Back
             </button>
         </div>
+
         <div class="question-9__right">
-            <form class="question-9__form">
-                <label for="question-9__input" class="question-9__label">Email</label>
+            <form class="question-9__form form" id="form9">
+                <label for="email" class="question-9__label">Email</label>
+
                 <div class="question-9__input">
-                    <input type="text" id="question-9__input" required>
+                    <input type="email" id="email">
+
                     <button class="question-9__button question__next" type="submit">
                         <svg width="9"
                              height="16"
@@ -499,6 +588,7 @@
             </form>
 
             <div class="question-9__counter">9/9</div>
+
             <div class="question-9__animations">
                 <div class="question-9__animation-1">
                     <svg width="156"
@@ -509,6 +599,7 @@
                         <circle cx="78" cy="78" r="78" fill="#F7906E" />
                     </svg>
                 </div>
+
                 <div class="question-9__animation-2">
                     <svg width="223"
                          height="183"
@@ -520,6 +611,7 @@
                               stroke-width="58" />
                     </svg>
                 </div>
+
                 <div class="question-9__animation-3">
                     <svg width="183"
                          height="182"

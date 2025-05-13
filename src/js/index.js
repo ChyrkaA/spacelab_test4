@@ -1,11 +1,12 @@
 import Swiper from "swiper/bundle";
+import useFetch from "./services/useFetch.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetch(
-        "https://www.mku-journal.online/catalog/recommendations?is_main=false"
-    )
-        .then(response => response.json())
+    useFetch('/catalog/recommendations?is_main=false')
         .then(data => {
+            if (!data) {
+                throw new Error('Data is bad');
+            }
             console.log(data);
             createSlides(data.data);
         })
@@ -228,6 +229,52 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.classList.remove("menu__scroll");
         }
     });
+    const arr = [
+        {id: 1, title: 'Купить хлеб', completed: true},
+        {id: 2, title: 'Позвонить маме', completed: false},
+        {id: 3, title: 'Сделать домашку', completed: true},
+        {id: 4, title: 'Прочитать статью', completed: false},];
+
+    const arr2 = arr.slice();
+
+    let stan = 1;
+    const resultDiv = document.querySelector('.result');
+
+    function createDom(sortedData) {
+        console.log(sortedData);
+        console.log(stan);
+        resultDiv.innerHTML = '';
+        sortedData.forEach(task => {
+            const taskElement = document.createElement('p');
+            taskElement.textContent = `${task.id}, ${task.title},${task.completed}`;
+
+            if (task.completed) {
+                taskElement.style.color = 'red';
+            }
+            resultDiv.appendChild(taskElement);
+
+        });
+    }
+
+    function sortAndDisplay() {
+
+        if (stan == 1) {
+            const sortedData = arr.sort((a, b) => a.completed - b.completed);
+            createDom(sortedData);
+            stan++;
+        } else if (stan == 2) {
+            const sortedData = arr.sort((a, b) => b.completed - a.completed);
+            createDom(sortedData);
+            stan++;
+        } else if (stan == 3) {
+            createDom(arr2);
+            stan = 1;
+        }
+
+    }
+
+    document.querySelector('.btn33').addEventListener('click', sortAndDisplay);
+
 });
 
 // const orders = [
@@ -332,76 +379,110 @@ document.addEventListener("DOMContentLoaded", function () {
 // console.log(wordCounter);
 
 
-const orders = [
-    {id: 1, client: 'Anna', total: 120},
-    {id: 2, client: 'Boris', total: 90},
-    {id: 3, client: 'Anna', total: 30},
-    {id: 4, client: 'Clara', total: 45},
-    {id: 5, client: 'Boris', total: 60},
-];
+// const orders = [
+//     {id: 1, client: 'Anna', total: 120},
+//     {id: 2, client: 'Boris', total: 90},
+//     {id: 3, client: 'Anna', total: 30},
+//     {id: 4, client: 'Clara', total: 45},
+//     {id: 5, client: 'Boris', total: 60},
+// ];
+//
+// let result = {};
+//
+//
+// orders.map(order => {
+//     if (!result[order.client]) {
+//         result[order.client] = {count: 0, total: 0};
+//     }
+//     result[order.client].count = result[order.client].count + 1;
+//     result[order.client].total = result[order.client].total + order.total;
+// });
+//
+// console.log(result);
+//
+// const products = [
+//     {id: 1, name: 'apple', price: 2},
+//     {id: 2, name: 'banana', price: 1},
+//     {id: 3, name: 'apple', price: 2},
+//     {id: 4, name: 'orange', price: 3},
+//     {id: 5, name: 'banana', price: 1},
+// ];
+//
+// let result2 = {};
+//
+// products.map(product => {
+//     if (!result2[product.name]) {
+//         result2[product.name] = {count: 0, totalPrice: 0};
+//     }
+//     result2[product.name].totalPrice = result2[product.name].totalPrice +
+// product.price; result2[product.name].count = result2[product.name].count + 1; });
+// console.log(result2);  const students = [ {name: 'Alice', grades: {math: 4, english:
+// 5, history: 3}}, {name: 'Bob', grades: {math: 2, english: 3, history: 4}}, {name:
+// 'Charlie', grades: {math: 5, english: 5, history: 5}}, {name: 'David', grades: {math:
+// 3, english: 2, history: 4}}, {name: 'Eva', grades: {math: 4, english: 5, history: 4}},
+// ];  let result3 = {};   students.map(student => { let counter = 0; let sum = 0;  if
+// (!result3[student.name]) { result3[student.name] = {average: 0}; } for (let key in
+// student.grades) { sum = sum + student.grades[key]; counter = counter + 1; }
+// result3[student.name] = {average: sum / counter}; });  for (let key in result3) { if
+// (result3[key].average >= 4) { console.log(key, result3[key]); } }
+// console.log(result3);
 
-let result = {};
-
-
-orders.map(order => {
-    if (!result[order.client]) {
-        result[order.client] = {count: 0, total: 0};
-    }
-    result[order.client].count = result[order.client].count + 1;
-    result[order.client].total = result[order.client].total + order.total;
-});
-
-console.log(result);
-
-const products = [
-    {id: 1, name: 'apple', price: 2},
-    {id: 2, name: 'banana', price: 1},
-    {id: 3, name: 'apple', price: 2},
-    {id: 4, name: 'orange', price: 3},
-    {id: 5, name: 'banana', price: 1},
-];
-
-let result2 = {};
-
-products.map(product => {
-    if (!result2[product.name]) {
-        result2[product.name] = {count: 0, totalPrice: 0};
-    }
-    result2[product.name].totalPrice = result2[product.name].totalPrice + product.price;
-    result2[product.name].count = result2[product.name].count + 1;
-});
-
-console.log(result2);
-
-const students = [
-    {name: 'Alice', grades: {math: 4, english: 5, history: 3}},
-    {name: 'Bob', grades: {math: 2, english: 3, history: 4}},
-    {name: 'Charlie', grades: {math: 5, english: 5, history: 5}},
-    {name: 'David', grades: {math: 3, english: 2, history: 4}},
-    {name: 'Eva', grades: {math: 4, english: 5, history: 4}},
-];
-
-let result3 = {};
-
-
-students.map(student => {
-    let counter = 0;
-    let sum = 0;
-
-    if (!result3[student.name]) {
-        result3[student.name] = {average: 0};
-    }
-    for (let key in student.grades) {
-        sum = sum + student.grades[key];
-        counter = counter + 1;
-    }
-    result3[student.name] = {average: sum / counter};
-});
-
-for (let key in result3) {
-    if (result3[key].average >= 4) {
-        console.log(key, result3[key]);
-    }
-}
-
-console.log(result3);
+// function caseInSwitch(val) {
+//     let answer = "";
+//
+//     // Only change code below this line
+//     switch (val) {
+//         case 1:
+//             console.log("alpha");
+//             break;
+//         case 2:
+//             console.log("beta");
+//             break;
+//         case 3:
+//             console.log("gamma");
+//             break;
+//         case 4:
+//             console.log("delta");
+//             break;
+//     }
+// }
+//
+// function caseInSwitch(val) {
+//     let answer = "";
+//
+//     const arr = ["alpha", "beta", "gamma", "delta"];
+//
+//     console.log(arr[val - 1]);
+// }
+//
+// caseInSwitch(1);
+//
+// const input = "В 2023 году было 5 конференций и 10 хакатонов.";
+//
+// let words = input.split(' ');
+// let words2 = [];
+// words.forEach(word => {
+//     if (typeof (word) == 'number') {
+//         words2.push(word);
+//     }
+//
+// });
+// console.log(words2);
+//
+// const data = [
+//     { id: 1, category: 'fruit', name: 'apple' },
+//     { id: 2, category: 'vegetable', name: 'carrot' },
+//     { id: 3, category: 'fruit', name: 'banana' },
+//     { id: 4, category: 'vegetable', name: 'cucumber' },
+//     { id: 5, category: 'fruit', name: 'orange' }
+// ]
+//
+// const res = data.reduce((acc, item) => {
+//     if (!acc[item.category]) {
+//         acc[item.category] = [];
+//     }
+//     acc[item.category].push(item);
+//     return acc;
+// }, {});
+//
+// console.log(res);

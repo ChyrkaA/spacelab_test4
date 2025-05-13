@@ -1,9 +1,12 @@
+import useFetch from "./services/useFetch.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-    fetch(
-        "https://www.mku-journal.online/catalog/recommendations?is_main=false"
-    )
-        .then(response => response.json())
+
+    useFetch('/catalog/recommendations?is_main=false')
         .then(data => {
+            if (!data) {
+                throw new Error('Data is bad');
+            }
             console.log(data);
             createSlides(data.data);
         })
@@ -76,4 +79,34 @@ document.addEventListener("DOMContentLoaded", () => {
         titleElement.textContent = titleElement.textContent.replace('User', userName);
     }
 
+    function getDataLocalStorage() {
+        const name = localStorage.getItem("name");
+        const mail = localStorage.getItem("Mail");
+        const smoke = localStorage.getItem("Do you smoke?");
+        const habits = localStorage.getItem("What is your eating habits?");
+        const alcohol = localStorage.getItem(
+            "How frequently do you consume\n" +
+            "                alcoholic beverages?");
+        const coldFluid = localStorage.getItem(
+            "How frequently do you have cold/flu symptoms?");
+        const stress = localStorage.getItem("Describe your stress level");
+        const glucose = localStorage.getItem(
+            "Have you ever been diagnosted with high blood glucose level?");
+        const focus = localStorage.getItem('Tell us what you want to focus on');
+
+        console.log('name: ', name, '\n',
+                    'Mail: ', mail, '\n',
+                    "Do you smoke?: ", smoke, '\n',
+                    "What is your eating habits?: ", habits, '\n',
+                    "How frequently do you consume alcoholic beverages?: ", alcohol, '\n',
+                    "How frequently do you have cold/flu symptoms?: ", coldFluid, '\n',
+                    "Describe your stress level: ", stress, '\n',
+                    "Have you ever been diagnosted with high blood glucose level?: ",
+                    glucose, '\n',
+                    'Tell us what you want to focus on: ', focus
+        );
+
+    }
+
+    getDataLocalStorage();
 });
